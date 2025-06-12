@@ -1,0 +1,79 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOhoGJLZF/1Qc/6V5PuBXZ3",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Armaanml/-Armaan-tech-creator/blob/main/combo%20finder\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# ComboFinder - Find combinations with sum in range 290-310\n",
+        "\n",
+        "from itertools import combinations\n",
+        "# Product list\n",
+        "ProductList = {'p1': 10, 'p2': 15, 'p3': 20, 'p4': 25, 'p5': 30, 'p6': 35, 'p7': 50}\n",
+        "\n",
+        "# Target price range\n",
+        "min_price = 290\n",
+        "max_price = 310\n",
+        "\n",
+        "# Store valid combinations\n",
+        "valid_combos = []\n",
+        "\n",
+        "# Get all combinations of all possible lengths\n",
+        "keys = list(ProductList.keys())\n",
+        "for r in range(1, len(keys)+1):\n",
+        "    for combo in combinations(keys, r):\n",
+        "        total = sum(ProductList[item] for item in combo)\n",
+        "        if min_price <= total <= max_price:\n",
+        "            valid_combos.append((combo, total))\n",
+        "\n",
+        "# Display results\n",
+        "for combo, total in valid_combos:\n",
+        "    print(f\"Combo: {combo}, Total Price: {total}\")\n",
+        "\n",
+        "print(f\"\\nTotal Valid Combos: {len(valid_combos)}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vKMWU7ARyt6D",
+        "outputId": "72239e1c-7f09-4cd4-a91c-a6042b377786"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Total Valid Combos: 0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
