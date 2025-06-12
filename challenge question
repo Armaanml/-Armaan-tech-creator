@@ -1,0 +1,68 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNs1Au01wsvzQEsPbWaRLoX",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Armaanml/-Armaan-tech-creator/blob/main/challenge%20question\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F40mOWbnoSrI",
+        "outputId": "f03fc7cf-665d-4b05-bef2-6de22240e179"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original list: ['Ram', 1, 'Shyam', 2, 'Aman', 3]\n",
+            "Sorted list (strings + numbers): ['Aman', 'Ram', 'Shyam', 1, 2, 3]\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Original heterogeneous list\n",
+        "L = [\"Ram\", 1, \"Shyam\", 2, \"Aman\", 3]\n",
+        "\n",
+        "# Print original list\n",
+        "print(\"Original list:\", L)\n",
+        "\n",
+        "# Separate strings and numbers\n",
+        "strings = sorted([x for x in L if isinstance(x, str)])\n",
+        "numbers = sorted([x for x in L if isinstance(x, int)])\n",
+        "\n",
+        "# Combine sorted lists (you can also choose to keep them separate)\n",
+        "sorted_list = strings + numbers\n",
+        "\n",
+        "# Print the sorted result\n",
+        "print(\"Sorted list (strings + numbers):\", sorted_list)"
+      ]
+    }
+  ]
+}
